@@ -1,0 +1,95 @@
+<%= form_with(id: 'address_capture', model: autocomplete, local: true) do |form| %>
+  <% if autocomplete.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(autocomplete.errors.count, "error") %> prohibited this autocomplete from being saved:</h2>
+
+      <ul>
+      <% autocomplete.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!--  <div class="field">-->
+    <%#= form.label 'Street Address' %>
+    <%#= form.text_field :address, placeholder: 'Enter your address', id: :autocomplete_address %>
+<!--  </div>-->
+
+  <div class='field'>
+    <%= form.label :line_1 -%>
+    <%= form.text_field :line_1, placeholder: 'Enter your address' -%>
+  </div>
+
+  <div class='field'>
+    <%= form.label :line_2 -%>
+    <%= form.text_field :line_2 -%>
+  </div>
+
+  <div class='field'>
+    <%= form.label :suburb -%>
+    <%= form.text_field :suburb -%>
+  </div>
+
+  <div class='field'>
+    <%= form.label :city -%>
+    <%= form.text_field :city -%>
+  </div>
+
+  <div class='field'>
+    <%= form.label :province -%>
+    <%= form.text_field :province -%>
+  </div>
+
+  <div class='field'>
+    <%= form.label :postal_code -%>
+    <%= form.text_field :postal_code -%>
+  </div>
+
+
+<!--  <div id="street_address" class="field">-->
+    <%#= form.label 'Street Address' %>
+    <%#= form.text_field format_address(:address), placeholder: 'Enter your address', id: :autocomplete_address %>
+<!--  </div>-->
+
+<!--  <div id="formatted_address_container" class="field" hidden="hidden">-->
+    <%#= form.label 'Street Address' %>
+    <%#= form.text_field :address, placeholder: 'Enter your address', id: :formatted_address %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label 'Suburb' %>
+    <%#= form.number_field :street_number, id: :street_number %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label 'Town' %>
+    <%#= form.text_field :locality, id: :locality %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label 'Name of the channel' %>
+    <%#= form.text_field :route, id: :route %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label 'Area' %>
+    <%#= form.text_field :administrative_area_level_1, id: :administrative_area_level_1 %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label 'Country' %>
+    <%#= form.text_field :country, id: :country %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= form.label 'Postal code' %>
+    <%#= form.number_field :postal_code, id: :postal_code %>
+<!--  </div>-->
+
+  <div class="actions">
+    <div class="btn waves-effect waves-light">
+      <%= form.submit "Submit" %>
+    </div>
+  </div>
+<% end %>
